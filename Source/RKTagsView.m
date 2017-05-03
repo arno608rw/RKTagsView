@@ -375,6 +375,10 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
     tagButton.exclusiveTouch = YES;
     [tagButton addTarget:self action:@selector(tagButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.mutableTagButtons insertObject:tagButton atIndex:index];
+      self.mutableTagButtons[index].selected = YES;
+      if (self.mutableTagButtons[index].tag == DEFAULT_BUTTON_TAG) {
+          self.mutableTagButtons[index].backgroundColor = self.tintColor;
+      }
     [self.scrollView addSubview:tagButton];
     [self setNeedsLayout];
   }
